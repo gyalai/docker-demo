@@ -1,0 +1,45 @@
+<arquillian xmlns="http://jboss.org/schema/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <engine>
+        <property name="deploymentExportPath">target/deployments</property>
+    </engine>
+
+    <extension qualifier="docker">
+        <property name="skip">${docker.disabled}</property>
+        <property name="serverVersion">1.20</property>
+        <property name="serverUri">${docker.url}</property>
+        <property name="autoStartContainers">tokumx</property>
+        <property name="dockerContainers">
+            wildfly-remote:
+              image: ts/demo-wildfly-it
+              exposedPorts: [8080/tcp, 9990/tcp]
+              await:
+                strategy: polling
+                sleepPollingTime: 5000
+                iterations: 25
+              portBindings: [8080/tcp, 9990/tcp]
+              env: [DB_NAME=demo]
+              links:
+               - tokumx:tokumx
+            tokumx:
+              image: ts/demo-tokumx
+              exposedPorts: [27017/tcp]
+              await:
+                strategy: polling
+                sleepPollingTime: 5000
+                iterations: 25
+              portBindings: [27017/tcp]
+        </property>
+    </extension>
+
+    <container qualifier="wildfly-remote">
+        <configuration>
+            <property name="managementAddress">${remote.test.server}</property>
+            <property name="managementPort">${remote.test.port}</property>
+            <property name="username">${remote.test.user}</property>
+            <property name="password">${remote.test.password}</property>
+        </configuration>
+    </container>
+
+</arquillian>

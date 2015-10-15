@@ -1,0 +1,13 @@
+web:
+  image: ts/demo-wildfly-dev
+  ports:
+   - "8080:8080"
+   - "9990:9990"
+   - "8787:8787"
+  links:
+   - tokumx
+
+tokumx:
+  image: ts/demo-tokumx-dev
+  ports:
+   - "27017:27017"

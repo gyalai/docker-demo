@@ -1,0 +1,27 @@
+[
+  {
+    "TECHNOLOGY_NAME": "Maven",
+    "DESCRIPTION": "Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. ",
+    "URL": "https://maven.apache.org/"
+  },
+  {
+    "TECHNOLOGY_NAME": "JRebel",
+    "DESCRIPTION": "Skip the build and redeploy process. JRebel reloads changes to Java classes, resources, and over 100 frameworks. ",
+    "URL": "https://zeroturnaround.com/software/jrebel/"
+  },
+  {
+    "TECHNOLOGY_NAME" : "Wildfly",
+    "DESCRIPTION" : "Fly Fast, and Free.",
+    "URL" : "http://wildfly.org/"
+  },
+  {
+    "TECHNOLOGY_NAME" : "Arquillian",
+    "DESCRIPTION" : "So you can rule your code. Not the bugs. No more mocks. No more container lifecycle and deployment hassles. Just real tests!",
+    "URL" : "http://arquillian.org/"
+  },
+  {
+    "TECHNOLOGY_NAME" : "Docker",
+    "DESCRIPTION" : "Build, Ship, Run! An open platform for distributed applications for developers and sysadmins",
+    "URL" : "https://www.docker.com/"
+  }
+]

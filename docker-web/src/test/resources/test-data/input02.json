@@ -1,0 +1,10 @@
+{
+  "TECHNOLOGY" :
+          [
+            {
+              "TECHNOLOGY_NAME" : "testInput",
+              "DESCRIPTION" : "testDescription",
+              "URL": "testURL"
+            }
+          ]
+}
